@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { withRouter } from 'react-router-dom'
-import { Container, Logo, Title } from './home.styled';
-import logo from '../../assets/garlic-logo.png';
+import { Container } from './home.styled';
+import Header from '../../components/header.component';
 import LoginForm from './login.component';
 import { findPlayerName, storePlayerName } from '../../repositories/playerName.repository';
 
@@ -19,8 +19,7 @@ const Home = ({ history }) => {
 
   return (
     <Container>
-      <Logo src={logo} className="App-logo" alt="logo" />
-      <Title>Garlic Symphony</Title>
+      <Header />
       <LoginForm playerName={playerName} onChangeName={updatePlayerName} onSubmit={onSubmit} />
     </Container>
   )
