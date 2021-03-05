@@ -23,13 +23,16 @@ import {
 } from './lobby.styled';
 import Header from '../../components/header.component';
 import WrapperFrame from '../../components/wrapperFrame.component';
+import { getPath } from '../../utils/routes';
 
 const players = times(i => ({
   id: i
 }), 30)
 
 const Lobby = ({ history }) => {
-  const goBack = () => history.push('/');
+  const goBack = () => history.push(getPath('home'));
+
+  const onStart = () => history.push(getPath('game', { id: '1234' }));
 
   return (
     <Container>
@@ -84,7 +87,7 @@ const Lobby = ({ history }) => {
               </Select>
             </SettingItem>
           </Settings>
-          <StartButton onClick={history.push('/:roomid')}>
+          <StartButton onClick={onStart}>
             <PlayArrowIcon />
             Démarrer
           </StartButton>

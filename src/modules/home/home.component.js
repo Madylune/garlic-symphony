@@ -4,6 +4,7 @@ import { Container } from './home.styled';
 import Header from '../../components/header.component';
 import LoginForm from './login.component';
 import { findPlayerName, storePlayerName } from '../../repositories/playerName.repository';
+import { getPath } from '../../utils/routes';
 
 const Home = ({ history }) => {
   const [playerName, setPlayerName] = useState(findPlayerName());
@@ -14,7 +15,7 @@ const Home = ({ history }) => {
 
   const onSubmit = () => {
     storePlayerName(playerName);
-    history.push('/lobby');
+    history.push(getPath('lobby'));
   };
 
   return (
