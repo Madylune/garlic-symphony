@@ -83,15 +83,51 @@ export const CodeWrapper = styled.div`
   }
 `;
 
+export const Games = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+`;
+
+export const GameButton = styled.div`
+  height: 130px;
+  width: 230px;
+  margin: 10px;
+  background-color: ${({ selected }) => selected ? '#ffffff' : 'rgba(255,255,255,0.9)'};
+  border-radius: 10px;
+  box-shadow: ${({ selected }) => selected ? '4px 5px 3px #9e8dea' : undefined};
+  transform: ${({ selected }) => selected ? 'scale(1.04)' : undefined};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #b8ade8;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.04);
+    box-shadow: 4px 5px 3px #9e8dea;
+    background-color: #ffffff;
+  }
+
+  svg {
+    font-size: 40px;
+    margin-top: 8px;
+  }
+`;
+
 export const Settings = styled.div`
-  margin-top: 20px;
+  margin: 10px;
 `;
 
 export const SettingItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 `
 
 export const Label = styled.label`
@@ -99,7 +135,7 @@ export const Label = styled.label`
   align-items: center;
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
 
   span {
     margin-left: 5px;
@@ -107,7 +143,7 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
-  height: 50px;
+  height: 40px;
   width: 250px;
   margin: 5px 0 10px;
   padding-left: 10px;
